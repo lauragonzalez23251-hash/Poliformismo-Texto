@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado de Traducción</title>
+</head>
+<body>
+    <h1>Rusultado del ejercicio Polimorfismo: Traductor, App e Intérprete</h1>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+    <tr>
+        <th>Traducción</th>
+        <th>Adaptación</th>
+        <th>Intérprete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="fila : ${resultados}">
+        <td th:text="${fila[0]}"></td>
+        <td th:text="${fila[1]}"></td>
+        <td th:text="${fila[2]}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

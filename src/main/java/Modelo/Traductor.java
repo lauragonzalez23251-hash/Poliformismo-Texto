@@ -4,22 +4,25 @@ public class Traductor implements ComunicadorTexto {
     private Texto texto;
 
 
-    public Traductor(String Texto) {
+    public Traductor(Texto texto) {
+
         this.texto = texto;
     }
     @Override
     public String traductorI(Texto texto) {
-        return "Traduciendo contenido\"" + this.texto.getContenido() + "\" del idioma \"" + this.texto.getIdioma() +
-                "\" en la región \"" + this.texto.getRegion() + "\"";
+        return "Traduciendo contenido\"" + this.texto.getContenido()
+                + "\" del idioma \"" + this.texto.getIdioma();
     }
 
     @Override
     public String Adaptador(Texto texto) {
-        return "";
+        return "Adaptando el contenido a la region \"" +
+                this.texto.getRegion() + "\"";
     }
 
     @Override
     public String interprete(Texto texto) {
-        return "";
+        return "Contenido final en\"" + this.texto.getIdioma() +
+                "para la region\"" + this.texto.getRegion() + "\"";
     }
 }
