@@ -1,4 +1,4 @@
-package Modelo;
+package clase1.Modelo;
 
 public class Texto {
     private String Contenido;

@@ -1,7 +1,6 @@
-package Controlador;
+package clase1.Controlador;
 
-import Modelo.*;
-
+import clase1.Modelo.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,7 @@ public class TDTControlador {
 
     @GetMapping("/Traduccion")
     public String Traduccion(Model model) {
-        String resultado = "";
+
         List<ComunicadorTexto> Contexto
                 = new ArrayList<>();
         Contexto.add(new Traductor(new Texto("Hola, ¿cómo estás?", "Español", "México")));
@@ -33,12 +32,12 @@ public class TDTControlador {
         List<String[]> resultados = new ArrayList<>();
         for (ComunicadorTexto comunicador : Contexto) {
             resultados.add(new String[]{
-                    comunicador.traductorI(null),
-                    comunicador.Adaptador(null),
-                    comunicador.interprete(null)
+                    comunicador.traductorI(),
+                    comunicador.Adaptador(),
+                    comunicador.interprete()
             });
         }
         model.addAttribute("resultados", resultados);
-        return "resultado";
+        return "Resultado";
     }
 }
